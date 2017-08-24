@@ -1,7 +1,7 @@
 {
   "name": "nested-camel",
   "version": "0.0.0",
-  "description": "Node starter project by knpwrs",
+  "description": "Flattens a nested object tree by recursively joining and camelcasing keys.",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel -sd lib src",
