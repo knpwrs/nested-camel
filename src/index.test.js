@@ -99,3 +99,33 @@ test('with glamor', (t) => {
     marginBottom: 5,
   }));
 });
+
+test('with glamor (no object-rest-spread)', (t) => {
+  t.deepEqual(css(nested({
+    background: 'green',
+    border: {
+      style: 'dashed',
+      top: {
+        width: '1px',
+        color: 'black',
+      },
+      bottom: {
+        width: '2px',
+        color: 'red',
+      },
+    },
+    margin: {
+      top: 10,
+      bottom: 5,
+    },
+  })), css({
+    background: 'green',
+    borderStyle: 'dashed',
+    borderTopWidth: '1px',
+    borderTopColor: 'black',
+    borderBottomWidth: '2px',
+    borderBottomColor: 'red',
+    marginTop: 10,
+    marginBottom: 5,
+  }));
+});
