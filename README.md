@@ -65,7 +65,7 @@ const rule3 = ncss({
       width: 'thick',   // borderTopWidth
     },
     bottom: {
-      style: 'light',   // borderBottomStyle
+      style: 'solid',   // borderBottomStyle
       color: 'blue',    // borderBottomColor
       width: 'thin',    // borderBottomWidth
     },
