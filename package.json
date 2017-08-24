@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel -d lib src",
     "test": "nyc ava src/**/*.test.js",
-    "test:watch": "ava --watch",
+    "test:watch": "ava --watch src/**/*.test.js",
     "lint": "eslint src",
     "posttest": "npm run lint",
     "prepack": "npm run build"
