@@ -1,4 +1,5 @@
 import test from 'ava';
+import { css } from 'glamor';
 import nested from './';
 
 test('sanity check', (t) => {
@@ -65,4 +66,36 @@ test('multiple recursive levels', (t) => {
     marginTop: 10,
     marginBottom: 5,
   });
+});
+
+test('with glamor', (t) => {
+  t.deepEqual(css({
+    background: 'green',
+    ...nested({
+      border: {
+        style: 'dashed',
+        top: {
+          width: '1px',
+          color: 'black',
+        },
+        bottom: {
+          width: '2px',
+          color: 'red',
+        },
+      },
+      margin: {
+        top: 10,
+        bottom: 5,
+      },
+    }),
+  }), css({
+    background: 'green',
+    borderStyle: 'dashed',
+    borderTopWidth: '1px',
+    borderTopColor: 'black',
+    borderBottomWidth: '2px',
+    borderBottomColor: 'red',
+    marginTop: 10,
+    marginBottom: 5,
+  }));
 });
