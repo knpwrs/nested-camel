@@ -16,6 +16,10 @@
     "require": "babel-register"
   },
   "author": "Kenneth Powers <ken@kenpowers.net> (http://knpw.rs)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knpwrs/nested-camel"
+  },
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4"
