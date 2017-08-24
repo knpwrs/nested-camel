@@ -6,7 +6,7 @@ const nested = (input, ...keys) => {
     if (isObject(value)) {
       assign(obj, nested(value, ...keys, key));
     } else {
-      obj[camelCase(`${[...keys, key].join('-')}`)] = value;
+      obj[camelCase([...keys, key].join('-'))] = value;
     }
   });
   return obj;
