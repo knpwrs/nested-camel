@@ -1,6 +1,6 @@
 {
   "name": "nested-camel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Flattens a nested object tree by recursively joining and camelcasing keys.",
   "main": "lib/index.js",
   "scripts": {
