@@ -1,4 +1,6 @@
 # nested-camel
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/knpwrs/nested-camel.svg)](https://greenkeeper.io/)
 [![Dependency Status](https://img.shields.io/david/knpwrs/nested-camel.svg)](https://david-dm.org/knpwrs/nested-camel)
 [![devDependency Status](https://img.shields.io/david/dev/knpwrs/nested-camel.svg)](https://david-dm.org/knpwrs/nested-camel#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/knpwrs/nested-camel.svg)](https://travis-ci.org/knpwrs/nested-camel)
