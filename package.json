@@ -38,6 +38,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "glamor": "^2.20.40",
-    "nyc": "^11.1.0"
+    "nyc": "^13.1.0"
   }
 }
