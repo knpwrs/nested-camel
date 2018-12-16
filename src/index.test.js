@@ -1,7 +1,7 @@
 import test from 'ava';
 import { css } from 'glamor';
 import { compose } from 'lodash/fp';
-import nested from './';
+import nested from '.';
 
 test('sanity check', (t) => {
   t.is(typeof nested, 'function');

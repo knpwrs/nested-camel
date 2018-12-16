@@ -1,4 +1,9 @@
-import { forEach, isObject, assign, camelCase } from 'lodash';
+import {
+  assign,
+  camelCase,
+  forEach,
+  isObject,
+} from 'lodash';
 
 const nested = (input, ...keys) => {
   const obj = {};
