@@ -1,26 +1,25 @@
-import test from 'ava';
 import { css } from 'glamor';
 import { compose } from 'lodash/fp';
 import nested from '.';
 
-test('sanity check', (t) => {
-  t.is(typeof nested, 'function');
+test('sanity check', () => {
+  expect(typeof nested).toBe('function');
 });
 
-test('single level', (t) => {
-  t.deepEqual(nested({
+test('single level', () => {
+  expect(nested({
     font: {
       family: 'Lato',
       size: '1em',
     },
-  }), {
+  })).toEqual({
     fontFamily: 'Lato',
     fontSize: '1em',
   });
 });
 
-test('recursive levels', (t) => {
-  t.deepEqual(nested({
+test('recursive levels', () => {
+  expect(nested({
     border: {
       style: 'dashed',
       top: {
@@ -32,7 +31,7 @@ test('recursive levels', (t) => {
         color: 'red',
       },
     },
-  }), {
+  })).toEqual({
     borderStyle: 'dashed',
     borderTopWidth: '1px',
     borderTopColor: 'black',
@@ -41,8 +40,8 @@ test('recursive levels', (t) => {
   });
 });
 
-test('multiple recursive levels', (t) => {
-  t.deepEqual(nested({
+test('multiple recursive levels', () => {
+  expect(nested({
     border: {
       style: 'dashed',
       top: {
@@ -58,7 +57,7 @@ test('multiple recursive levels', (t) => {
       top: 10,
       bottom: 5,
     },
-  }), {
+  })).toEqual({
     borderStyle: 'dashed',
     borderTopWidth: '1px',
     borderTopColor: 'black',
@@ -69,8 +68,8 @@ test('multiple recursive levels', (t) => {
   });
 });
 
-test('with glamor', (t) => {
-  t.deepEqual(css({
+test('with glamor', () => {
+  expect(css({
     background: 'green',
     ...nested({
       border: {
@@ -89,7 +88,7 @@ test('with glamor', (t) => {
         bottom: 5,
       },
     }),
-  }), css({
+  })).toEqual(css({
     background: 'green',
     borderStyle: 'dashed',
     borderTopWidth: '1px',
@@ -101,8 +100,8 @@ test('with glamor', (t) => {
   }));
 });
 
-test('with glamor (no object-rest-spread)', (t) => {
-  t.deepEqual(css(nested({
+test('with glamor (no object-rest-spread)', () => {
+  expect(css(nested({
     background: 'green',
     border: {
       style: 'dashed',
@@ -119,7 +118,7 @@ test('with glamor (no object-rest-spread)', (t) => {
       top: 10,
       bottom: 5,
     },
-  })), css({
+  }))).toEqual(css({
     background: 'green',
     borderStyle: 'dashed',
     borderTopWidth: '1px',
@@ -131,9 +130,9 @@ test('with glamor (no object-rest-spread)', (t) => {
   }));
 });
 
-test('with glamor (composed)', (t) => {
+test('with glamor (composed)', () => {
   const ncss = compose(css, nested);
-  t.deepEqual(ncss(nested({
+  expect(ncss(nested({
     background: 'green',
     border: {
       style: 'dashed',
@@ -150,7 +149,7 @@ test('with glamor (composed)', (t) => {
       top: 10,
       bottom: 5,
     },
-  })), css({ // Match without composition
+  }))).toEqual(css({ // Match without composition
     background: 'green',
     borderStyle: 'dashed',
     borderTopWidth: '1px',
